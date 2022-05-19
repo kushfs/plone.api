@@ -390,6 +390,7 @@ class TestPloneApiContent(unittest.TestCase):
     def test_create_anonymous_unauthorized(self):
         from AccessControl import Unauthorized
         from plone.app.testing import logout
+
         logout()
         with self.assertRaises(Unauthorized):
             obj = api.content.create(
